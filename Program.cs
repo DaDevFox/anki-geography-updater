@@ -93,7 +93,7 @@ static class Convertor
         {
             long id = -1;
 
-            string json = $"{{\"action\": \"findNotes\",\r\n\"version\": 6,\r\n\"params\": {{\r\n\"query\": \"deck:{targetDeck} countryName:*\\\"{country}\\\"*\"\r\n    }}\r\n}}";
+            string json = $"{{\"action\": \"findNotes\",\r\n\"version\": 6,\r\n\"params\": {{\r\n\"query\": \"deck:{targetDeck} \\\"countryName:{country}\\\"\"\r\n    }}\r\n}}";
             using (var client = new HttpClient())
             {
                 var response = await client.PostAsync(
